@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
+import loginAPI from '../APICalls/login'
 
 function Login() {
   // Component State
-  const [ username, setUsername ] = useState({
-    username: ""
-  });
+  const [ username, setUsername ] = useState("");
 
   // On change handler
   const handleChanges = event => {
-    setUsername({...username, [event.target.name]: event.target.value });
+    console.log("this hittin?")
+    setUsername(event.target.value);
   }
 
   // Submission handler
   const userLogin = event => {
     event.preventDefault();
-
-    setUsername({ username: "" })
+    loginAPI(username)
+    setUsername("")
   }
 
   return (
@@ -27,8 +27,7 @@ function Login() {
           name="username"
           placeholder="username"
           value={ username }
-          onChange={handleChanges}
-          ref={}
+          onChange={ handleChanges }
           />
         <input type="submit"/>
       </form>
