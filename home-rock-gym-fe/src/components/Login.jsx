@@ -1,11 +1,14 @@
+// dependencies
 import React, { useState } from 'react';
-
+// components
+import LoginValidation from '../components/alerts/LoginValidation'
+// utilities
 import loginAPI from '../APICalls/login'
 
 // Form validation
 
 const validateUsername = username => {
-  const usernameRegex = /^[a-zA-Z0-9]+$/;
+  // const usernameRegex = /^[a-zA-Z0-9]+$/;
   if (username.length > 7) {
     return true
   }
@@ -21,6 +24,7 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (validateUsername(username)) {
+      setUsernameInvalid(false)
       loginAPI(username)
       setUsername("")
     } else {
@@ -49,6 +53,7 @@ function Login() {
           />
         <input type="submit"/>
       </form>
+      {usernameInvalid && <LoginValidation />}
     </div>
   )
 }
