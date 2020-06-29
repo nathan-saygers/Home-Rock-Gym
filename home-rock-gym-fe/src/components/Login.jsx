@@ -1,18 +1,38 @@
-import React from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import React, { useState } from 'react';
 
 function Login() {
+  // Component State
+  const [ username, setUsername ] = useState({
+    username: ""
+  });
+
+  // On change handler
+  const handleChanges = event => {
+    setUsername({...username, [event.target.name]: event.target.value });
+  }
+
+  // Submission handler
+  const userLogin = event => {
+    event.preventDefault();
+
+    setUsername({ username: "" })
+  }
+
   return (
-    <Form>
-      <FormGroup>
-        <Label for="exampleEmail">Email</Label>
-        <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-      </FormGroup>
-    </Form>
+    <div>
+      <p>This is the login field.  Just your username</p>
+      <form onSubmit={userLogin}>
+        <input 
+          type="text"
+          name="username"
+          placeholder="username"
+          value={ username }
+          onChange={handleChanges}
+          ref={}
+          />
+        <input type="submit"/>
+      </form>
+    </div>
   )
 }
 
