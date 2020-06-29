@@ -8,8 +8,8 @@ import loginAPI from '../APICalls/login'
 // Form validation
 
 const validateUsername = username => {
-  // const usernameRegex = /^[a-zA-Z0-9]+$/;
-  if (username.length > 7) {
+  const usernameRegex = /^[a-zA-Z0-9_-]+$/;
+  if (username.length > 7 && username.match(usernameRegex)) {
     return true
   }
 
