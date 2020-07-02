@@ -1,5 +1,6 @@
 // dependencies
 import React, { useState } from 'react';
+import styles from './Login.module.scss'
 // components
 import LoginValidation from '../components/alerts/LoginValidation'
 // utilities
@@ -35,23 +36,23 @@ function Login() {
   // On change handler
   const handleChanges = event => {
     setUsername(event.target.value);
-    console.log("this hittin?", username)
-    console.log(usernameInvalid)
   }
 
   return (
-    <div>
+    <div className={styles.loginContainer} >
       {/* Login form */}
-      <p>This is the login field.  Just your username</p>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text"
-          name="username"
-          placeholder="username"
-          value={ username }
-          onChange={ handleChanges }
-          />
-        <input type="submit"/>
+      <p className={styles.loginLabel}>LOGIN</p>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <div>
+          <input className={styles.loginFormChild}
+            name="username"
+            placeholder="Username"
+            value={ username }
+            onChange={ handleChanges }
+            />
+          <button className={styles.loginFormChild}
+            type="submit">Login</button>
+        </div>
       </form>
       {usernameInvalid && <LoginValidation />}
     </div>
