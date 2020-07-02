@@ -10,7 +10,7 @@ const loginAPI = username => {
       {"username": username}
     )
     .then(response => {
-      console.log(response)
+      localStorage.setItem('userIdent', response.data.userIdent)
     })
     .catch(error => {
       console.log(error.message)
