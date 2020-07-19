@@ -9,8 +9,10 @@ import WallGrid from "./components/WallGrid";
 function App() {
   return (
     <div>
-      <WallGrid />
-      <Login />
+      <div className="pageContainer">
+        <WallGrid />
+        <Login />
+      </div>
     </div>
   );
 }
