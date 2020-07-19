@@ -7,50 +7,54 @@ import WallGridItem from "./WallGridItem";
 
 let gridShape = [
   [
-    { coord: "1A" },
-    { coord: "1B" },
-    { coord: "1C" },
-    { coord: "1D" },
-    { coord: "1E" },
+    { name: "1A" },
+    { name: "1B" },
+    { name: "1C" },
+    { name: "1D" },
+    { name: "1E" },
   ],
   [
-    { coord: "2A" },
-    { coord: "2B" },
-    { coord: "2C" },
-    { coord: "2D" },
-    { coord: "2E" },
+    { name: "2A" },
+    { name: "2B" },
+    { name: "2C" },
+    { name: "2D" },
+    { name: "2E" },
   ],
   [
-    { coord: "3A" },
-    { coord: "3B" },
-    { coord: "3C" },
-    { coord: "3D" },
-    { coord: "3E" },
+    { name: "3A" },
+    { name: "3B" },
+    { name: "3C" },
+    { name: "3D" },
+    { name: "3E" },
   ],
   [
-    { coord: "4A" },
-    { coord: "4B" },
-    { coord: "4C" },
-    { coord: "4D" },
-    { coord: "4E" },
+    { name: "4A" },
+    { name: "4B" },
+    { name: "4C" },
+    { name: "4D" },
+    { name: "4E" },
   ],
   [
-    { coord: "5A" },
-    { coord: "5B" },
-    { coord: "5C" },
-    { coord: "5D" },
-    { coord: "5E" },
+    { name: "5A" },
+    { name: "5B" },
+    { name: "5C" },
+    { name: "5D" },
+    { name: "5E" },
   ],
 ];
 
 const WallGrid = (props) => {
-  return gridShape.map((row) => (
-    <div>
-      {row.map((coord) => (
-        <WallGridItem coord={coord} />
+  return (
+    <div className={styles.wall}>
+      {gridShape.map((row) => (
+        <div className={styles.row}>
+          {row.map((coord) => (
+            <WallGridItem coord={coord} />
+          ))}
+        </div>
       ))}
     </div>
-  ));
+  );
 };
 
 export default WallGrid;
