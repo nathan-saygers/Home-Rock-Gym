@@ -31,15 +31,18 @@ let gridShape = [
   { name: "4E" },
 
   { name: "5A" },
-  { name: "5B" },
-  { name: "5C" },
-  { name: "5D" },
-  { name: "5E" },
 ];
 
-const WallGrid = (props) => {
+const WallGrid = ({ wallDimensions }) => {
+  const calculateWallDimensions = () => {
+    const width = wallDimensions[0] * 200 + (wallDimensions[0] - 1) * 16 + 48;
+    const height = wallDimensions[1] * 200 + (wallDimensions[1] - 1) * 16 + 48;
+
+    return { width: `${width}px`, height: `${height}px` };
+  };
+
   return (
-    <div className={styles.wall}>
+    <div style={calculateWallDimensions()} className={styles.wall}>
       {gridShape.map((coord) => (
         <WallGridItem coord={coord} />
       ))}
