@@ -6,11 +6,13 @@ import "./App.css";
 import Login from "./components/Login";
 import WallGrid from "./components/WallGrid";
 
+const wallDimensions = [3, 7];
+
 function App() {
   return (
     <div>
       <div className="pageContainer">
-        <WallGrid />
+        <WallGrid wallDimensions={wallDimensions} />
         <Login />
       </div>
     </div>
