@@ -6,7 +6,7 @@ import "./App.css";
 import Login from "./components/Login";
 import WallGrid from "./components/WallGrid";
 
-const wallDimensions = [3, 7];
+const wallDimensions = [11, 18];
 
 function App() {
   return (
