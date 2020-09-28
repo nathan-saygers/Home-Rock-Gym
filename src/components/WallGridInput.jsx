@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./WallGridInput.module.scss";
 
-const WallGridInput = ({ setWallDimensions }) => {
+const WallGridInput = ({ setWallDimensions, setWallDisplayName }) => {
   const [dimensions, setDimensions] = useState({});
   const [wallName, setWallName] = useState("Default Wall");
 
@@ -31,6 +31,7 @@ const WallGridInput = ({ setWallDimensions }) => {
       parseInt(dimensions.height),
       parseInt(dimensions.width),
     ]);
+    setWallDisplayName(wallName);
   };
 
   return (

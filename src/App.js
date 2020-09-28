@@ -9,12 +9,19 @@ import WallGridInput from "./components/WallGridInput";
 
 function App() {
   const [wallDimensions, setWallDimensions] = useState([11, 18]);
+  const [wallDisplayName, setWallDisplayName] = useState("Wall Name");
 
   return (
     <div>
       <div className="pageContainer">
-        <WallGridInput setWallDimensions={setWallDimensions} />
-        <WallGrid wallDimensions={wallDimensions} />
+        <WallGridInput
+          setWallDimensions={setWallDimensions}
+          setWallDisplayName={setWallDisplayName}
+        />
+        <WallGrid
+          wallDimensions={wallDimensions}
+          wallDisplayName={wallDisplayName}
+        />
         <Login />
       </div>
     </div>
