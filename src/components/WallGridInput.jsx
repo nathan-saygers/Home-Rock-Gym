@@ -29,19 +29,17 @@ const WallGridInput = (props) => {
       <form action="">
         <p>Height:</p>
         <input
-          type="number"
+          type="text"
           name="height"
-          placeholder="Height"
           onChange={handleChanges}
-          value={dimensions.height}
+          value={dimensions.height || "Height"}
         />
         <p>Width:</p>
         <input
-          type="number"
+          type="text"
           name="width"
-          placeholder="Width"
           onChange={handleChanges}
-          value={dimensions.width}
+          value={dimensions.width || "Width"}
         />
         <p>Wall Name:</p>
         <input
