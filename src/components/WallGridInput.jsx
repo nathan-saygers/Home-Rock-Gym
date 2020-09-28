@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./WallGridInput.module.scss";
 
-const WallGridInput = (props) => {
+const WallGridInput = ({ setWallDimensions }) => {
   const [dimensions, setDimensions] = useState({});
   const [wallName, setWallName] = useState("Default Wall");
 
@@ -23,10 +23,20 @@ const WallGridInput = (props) => {
     );
   };
 
+  // On Submit Handler
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target);
+    setWallDimensions([
+      parseInt(dimensions.height),
+      parseInt(dimensions.width),
+    ]);
+  };
+
   return (
     <div className={styles.wallInputForm}>
       <p>Update Wall Details:</p>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <p>Height:</p>
         <input
           type="text"
@@ -49,6 +59,7 @@ const WallGridInput = (props) => {
           onChange={handleChanges}
           value={wallName}
         />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
