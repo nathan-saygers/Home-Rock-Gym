@@ -10,12 +10,17 @@ const WallGridInput = (props) => {
   const handleChanges = (event) => {
     if (event.target.name === "name") {
       setWallName(event.target.value);
-      console.log(wallName);
     } else {
-      console.log("weeeow", event.target.name, event.target.value);
       setDimensions({ ...dimensions, [event.target.name]: event.target.value });
-      console.log("pahoyhoy", dimensions);
     }
+
+    console.log(
+      "from handleChanges",
+      "Dimensions: ",
+      dimensions,
+      "Wall Name: ",
+      wallName
+    );
   };
 
   return (
