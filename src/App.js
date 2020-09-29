@@ -6,6 +6,7 @@ import "./App.css";
 import Login from "./components/Login";
 import WallGrid from "./components/WallGrid";
 import WallGridInput from "./components/WallGridInput";
+import HoldLibrary from "./components/HoldLibrary";
 
 function App() {
   const [wallDimensions, setWallDimensions] = useState([11, 18]);
@@ -14,6 +15,7 @@ function App() {
   return (
     <div>
       <div className="pageContainer">
+        <HoldLibrary />
         <WallGridInput
           setWallDimensions={setWallDimensions}
           setWallDisplayName={setWallDisplayName}
