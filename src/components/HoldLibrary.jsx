@@ -5,6 +5,9 @@ import styles from "./HoldLibrary.module.scss";
 // Dummy data
 import holds from "../dummyData/holds";
 
+// Components
+import HoldLibraryItem from "./HoldLibraryItem";
+
 const HoldLibrary = (props) => {
   console.log("should be holds", holds);
   return (
@@ -12,10 +15,7 @@ const HoldLibrary = (props) => {
       <p>Holds below this:</p>
       <div>
         {holds.map((hold) => (
-          <div>
-            <div>{hold.name}</div>
-            <div>{hold.type}</div>
-          </div>
+          <HoldLibraryItem holdDetails={hold} />
         ))}
       </div>
     </div>

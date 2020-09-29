@@ -2,10 +2,13 @@
 import React from "react";
 import styles from "./HoldLibrary.module.scss";
 
-const HoldLibraryItem = (props) => {
+const HoldLibraryItem = ({ holdDetails }) => {
   return (
     <div className={styles.HoldLibraryItemContainer}>
-      I'm a hold library item
+      <p>{holdDetails.name}</p>
+      <p>{holdDetails.size}</p>
+      <p>{holdDetails.type}</p>
+      <p>{holdDetails.colore}</p>
     </div>
   );
 };
