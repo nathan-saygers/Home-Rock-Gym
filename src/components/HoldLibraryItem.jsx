@@ -1,6 +1,6 @@
 // Dependencies
 import React from "react";
-import styles from "./HoldLibrary.module.scss";
+import styles from "./HoldLibraryItem.module.scss";
 
 const HoldLibraryItem = ({ holdDetails }) => {
   return (

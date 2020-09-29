@@ -12,8 +12,8 @@ const HoldLibrary = (props) => {
   console.log("should be holds", holds);
   return (
     <div className={styles.holdLibraryContainer}>
-      <p>Holds below this:</p>
-      <div>
+      <p>Hold Library</p>
+      <div className={styles.holdContainer}>
         {holds.map((hold) => (
           <HoldLibraryItem holdDetails={hold} />
         ))}
