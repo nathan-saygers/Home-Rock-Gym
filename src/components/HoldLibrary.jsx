@@ -10,7 +10,7 @@ const HoldLibrary = ({ holds, setHoldData }) => {
   console.log("should be holds", holds);
   return (
     <div className={styles.holdLibraryContainer}>
-      <HoldSearchBar setHoldData={setHoldData} />
+      <HoldSearchBar setHoldData={setHoldData} holdData={holds} />
       <p>Hold Library</p>
       <div className={styles.holdContainer}>
         <div className={styles.holdTableHeader}>
@@ -19,9 +19,8 @@ const HoldLibrary = ({ holds, setHoldData }) => {
           <p>Type</p>
           <p>Color</p>
         </div>
-        {holds.map((hold) => (
-          <HoldLibraryItem holdDetails={hold} />
-        ))}
+        {holds.length > 0 &&
+          holds.map((hold) => <HoldLibraryItem holdDetails={hold} />)}
       </div>
     </div>
   );

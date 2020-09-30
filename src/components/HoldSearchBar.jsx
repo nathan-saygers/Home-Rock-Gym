@@ -2,18 +2,30 @@
 import React, { useState } from "react";
 import styles from "./HoldSearchBar.module.scss";
 
-const HoldSearchBar = ({ setHoldData }) => {
-  const [filter, setFilter] = useState({
+const HoldSearchBar = ({ holdData, setHoldData }) => {
+  const [searchFilteredHolds, setSearchFilteredHolds] = useState(holdData);
+  const [filters, setFilters] = useState({
     name: "",
     size: "",
     type: "",
     color: "",
   });
 
+  // Logic for filtering
+
   const handleChanges = (event) => {
     event.preventDefault();
-    setFilter({ ...filter, [event.target.name]: event.target.value });
-    console.log(filter);
+    setFilters({ ...filters, [event.target.name]: event.target.value });
+    console.log(filters);
+
+    // reset holds to unfiltered
+    setHoldData();
+
+    const filteredHolds = holdData.filter((hold) => {
+      return hold.name === filters.name;
+    });
+
+    setHoldData(filteredHolds);
   };
 
   return (
@@ -24,28 +36,28 @@ const HoldSearchBar = ({ setHoldData }) => {
           type="text"
           name="name"
           onChange={handleChanges}
-          value={filter.name}
+          value={filters.name}
         />
         <p>Filter by Size:</p>
         <input
           type="text"
           name="size"
           onChange={handleChanges}
-          value={filter.size}
+          value={filters.size}
         />
         <p>Filter by Type:</p>
         <input
           type="text"
           name="type"
           onChange={handleChanges}
-          value={filter.type}
+          value={filters.type}
         />
         <p>Filter by Color:</p>
         <input
           type="text"
           name="color"
           onChange={handleChanges}
-          value={filter.color}
+          value={filters.color}
         />
       </form>
     </div>
