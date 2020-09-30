@@ -3,9 +3,29 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 90%;
+  border: 5px whitesmoke solid;
 }
 
 .holdContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  border: 2px blue;
+}
+
+.holdTableHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 2px purple solid;
+
+  p {
+    border: 2px orange solid;
+    padding: 15px;
+    width: 20%;
+    margin: 1% 50px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

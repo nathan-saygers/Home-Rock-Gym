@@ -1,4 +1,14 @@
 .HoldLibraryItemContainer {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  border: 2px yellow solid;
+
+  p {
+    border: 2px green solid;
+    padding: 15px;
+    width: 20%;
+    margin: 1% 50px;
+    text-align: center;
+  }
 }

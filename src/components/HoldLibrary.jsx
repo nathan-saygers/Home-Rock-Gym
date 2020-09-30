@@ -14,6 +14,12 @@ const HoldLibrary = (props) => {
     <div className={styles.holdLibraryContainer}>
       <p>Hold Library</p>
       <div className={styles.holdContainer}>
+        <div className={styles.holdTableHeader}>
+          <p>Name</p>
+          <p>Size</p>
+          <p>Type</p>
+          <p>Color</p>
+        </div>
         {holds.map((hold) => (
           <HoldLibraryItem holdDetails={hold} />
         ))}
