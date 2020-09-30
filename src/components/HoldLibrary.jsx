@@ -2,16 +2,15 @@
 import React from "react";
 import styles from "./HoldLibrary.module.scss";
 
-// Dummy data
-import holds from "../dummyData/holds";
-
 // Components
 import HoldLibraryItem from "./HoldLibraryItem";
+import HoldSearchBar from "./HoldSearchBar";
 
-const HoldLibrary = (props) => {
+const HoldLibrary = ({ holds, setHoldData }) => {
   console.log("should be holds", holds);
   return (
     <div className={styles.holdLibraryContainer}>
+      <HoldSearchBar setHoldData={setHoldData} />
       <p>Hold Library</p>
       <div className={styles.holdContainer}>
         <div className={styles.holdTableHeader}>
