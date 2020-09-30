@@ -1,25 +1,53 @@
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
 import styles from "./HoldSearchBar.module.scss";
 
 const HoldSearchBar = ({ setHoldData }) => {
-  const handleClick = (event) => {
-    console.log("the link was clicked");
-    setHoldData([
-      {
-        id: 6,
-        size: "large",
-        name: "thank godder jug",
-        type: "jug",
-        colore: "orange",
-        photo: "www.thisisaphotolink.com",
-      },
-    ]);
+  const [filter, setFilter] = useState({
+    name: "",
+    size: "",
+    type: "",
+    color: "",
+  });
+
+  const handleChanges = (event) => {
+    event.preventDefault();
+    setFilter({ ...filter, [event.target.name]: event.target.value });
+    console.log(filter);
   };
 
   return (
-    <div className={styles.searchBarContainer} onClick={() => handleClick()}>
-      I'm a search bar!
+    <div className={styles.searchBarContainer}>
+      <form action="">
+        <p>Filter by Name:</p>
+        <input
+          type="text"
+          name="name"
+          onChange={handleChanges}
+          value={filter.name}
+        />
+        <p>Filter by Size:</p>
+        <input
+          type="text"
+          name="size"
+          onChange={handleChanges}
+          value={filter.size}
+        />
+        <p>Filter by Type:</p>
+        <input
+          type="text"
+          name="type"
+          onChange={handleChanges}
+          value={filter.type}
+        />
+        <p>Filter by Color:</p>
+        <input
+          type="text"
+          name="color"
+          onChange={handleChanges}
+          value={filter.color}
+        />
+      </form>
     </div>
   );
 };
