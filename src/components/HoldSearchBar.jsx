@@ -1,9 +1,8 @@
 // Dependencies
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./HoldSearchBar.module.scss";
 
-const HoldSearchBar = ({ holdData, setHoldData }) => {
-  const [searchFilteredHolds, setSearchFilteredHolds] = useState(holdData);
+const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
   const [filters, setFilters] = useState({
     name: "",
     size: "",
@@ -11,22 +10,28 @@ const HoldSearchBar = ({ holdData, setHoldData }) => {
     color: "",
   });
 
+  // load in holdData the first time
+  useEffect(() => {
+    setFilteredHolds(holdData);
+  }, []);
+
   // Logic for filtering
-
   const handleChanges = (event) => {
-    event.preventDefault();
+    console.log("event stuff", event.target.name, event.target.value);
     setFilters({ ...filters, [event.target.name]: event.target.value });
-    console.log(filters);
-
-    // reset holds to unfiltered
-    setHoldData();
-
-    const filteredHolds = holdData.filter((hold) => {
-      return hold.name === filters.name;
-    });
-
-    setHoldData(filteredHolds);
+    console.log("das filter", filters);
   };
+
+  // Reload page based on search filters
+  useEffect(() => {
+    const filteredHolds = holdData.filter((hold) => {
+      let subString = filters.name;
+      return hold.name.includes(subString);
+    });
+    setFilteredHolds(filteredHolds);
+  }, [filters]);
+
+  console.log("outside handleChanges", filters);
 
   return (
     <div className={styles.searchBarContainer}>
