@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./HoldSearchBar.module.scss";
 
 const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [filters, setFilters] = useState({
     name: "",
     size: "",
@@ -10,10 +11,19 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     color: "",
   });
 
-  // load in holdData the first time
+  // Reload page based on search filters
   useEffect(() => {
-    setFilteredHolds(holdData);
-  }, []);
+    // load in holdData the first time
+    if (isFirstLoad === true) {
+      setFilteredHolds(holdData);
+    }
+    const filteredHolds = holdData.filter((hold) => {
+      let subString = filters.name;
+      return hold.name.includes(subString);
+    });
+    setFilteredHolds(filteredHolds);
+    setIsFirstLoad(false);
+  }, [filters]);
 
   // Logic for filtering
   const handleChanges = (event) => {
@@ -21,15 +31,6 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     setFilters({ ...filters, [event.target.name]: event.target.value });
     console.log("das filter", filters);
   };
-
-  // Reload page based on search filters
-  useEffect(() => {
-    const filteredHolds = holdData.filter((hold) => {
-      let subString = filters.name;
-      return hold.name.includes(subString);
-    });
-    setFilteredHolds(filteredHolds);
-  }, [filters]);
 
   console.log("outside handleChanges", filters);
 
