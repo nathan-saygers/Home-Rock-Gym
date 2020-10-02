@@ -1,3 +1,19 @@
 .searchBarContainer {
-  color: black;
+  width: 100%;
+  height: 60px;
+}
+
+.formInput {
+  height: 1.5rem;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: flex-start;
+}
+
+form > div {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
 }

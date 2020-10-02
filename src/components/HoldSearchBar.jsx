@@ -48,35 +48,44 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
 
   return (
     <div className={styles.searchBarContainer}>
-      <form action="">
-        <p>Filter by Name:</p>
-        <input
-          type="text"
-          name="name"
-          onChange={handleChanges}
-          value={filters.name}
-        />
-        <p>Filter by Size:</p>
-        <select name="size" value={filters.size} onChange={handleChanges}>
-          <option value="">Choose a size</option>
-          <option value="small">small</option>
-          <option value="medium">medium</option>
-          <option value="large">large</option>
-        </select>
-        <p>Filter by Type:</p>
-        <select name="type" value={filters.type} onChange={handleChanges}>
-          <option value="">Choose a type</option>
-          {holdTypeOptions &&
-            holdTypeOptions.map((type) => <option value={type}>{type}</option>)}
-        </select>
-        <p>Filter by Color:</p>
-        <select name="color" value={filters.color} onChange={handleChanges}>
-          <option value="">Choose a color</option>
-          {holdColorOptions &&
-            holdColorOptions.map((color) => (
-              <option value={color}>{color}</option>
-            ))}
-        </select>
+      <form className={styles.searchForm}>
+        <div>Filters:</div>
+        <div>
+          <input
+            className={styles.formInput}
+            type="text"
+            name="name"
+            placeholder="Hold Name"
+            onChange={handleChanges}
+            value={filters.name}
+          />
+        </div>
+        <div>
+          <select name="size" value={filters.size} onChange={handleChanges}>
+            <option value="">filter by size</option>
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+          </select>
+        </div>
+        <div>
+          <select name="type" value={filters.type} onChange={handleChanges}>
+            <option value="">filter by type</option>
+            {holdTypeOptions &&
+              holdTypeOptions.map((type) => (
+                <option value={type}>{type}</option>
+              ))}
+          </select>
+        </div>
+        <div>
+          <select name="color" value={filters.color} onChange={handleChanges}>
+            <option value="">filter by color</option>
+            {holdColorOptions &&
+              holdColorOptions.map((color) => (
+                <option value={color}>{color}</option>
+              ))}
+          </select>
+        </div>
       </form>
     </div>
   );
