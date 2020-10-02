@@ -8,7 +8,7 @@ const HoldLibraryItem = ({ holdDetails }) => {
       <p>{holdDetails.name}</p>
       <p>{holdDetails.size}</p>
       <p>{holdDetails.type}</p>
-      <p>{holdDetails.colore}</p>
+      <p>{holdDetails.color}</p>
     </div>
   );
 };

@@ -4,7 +4,7 @@ const holds = [
     size: "small",
     name: "meatlet",
     type: "crimp",
-    colore: "yellow",
+    color: "yellow",
     photo: "www.thisisaphotolink.com",
   },
   {
@@ -12,7 +12,7 @@ const holds = [
     size: "large",
     name: "big triangle",
     type: "volume",
-    colore: "blue",
+    color: "blue",
     photo: "www.thisisaphotolink.com",
   },
   {
@@ -20,7 +20,7 @@ const holds = [
     size: "medium",
     name: "thank god jug",
     type: "jug",
-    colore: "red",
+    color: "red",
     photo: "www.thisisaphotolink.com",
   },
   {
@@ -28,7 +28,7 @@ const holds = [
     size: "small",
     name: "two finger pocket",
     type: "pocket",
-    colore: "green",
+    color: "green",
     photo: "www.thisisaphotolink.com",
   },
   {
@@ -36,7 +36,7 @@ const holds = [
     size: "small",
     name: "foot chip",
     type: "foothold",
-    colore: "gray",
+    color: "gray",
     photo: "www.thisisaphotolink.com",
   },
   {
@@ -44,7 +44,7 @@ const holds = [
     size: "large",
     name: "thank godder jug",
     type: "jug",
-    colore: "orange",
+    color: "orange",
     photo: "www.thisisaphotolink.com",
   },
 ];
