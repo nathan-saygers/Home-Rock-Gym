@@ -44,7 +44,16 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     console.log("das filter", filters);
   };
 
-  console.log("outside handleChanges", filters);
+  // Logic for clearing filters
+  const clearFilters = (event) => {
+    event.preventDefault();
+    setFilters({
+      name: "",
+      size: "",
+      type: "",
+      color: "",
+    });
+  };
 
   return (
     <div className={styles.searchBarContainer}>
@@ -52,7 +61,7 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
         <div>Filters:</div>
         <div>
           <input
-            className={styles.formInput}
+            className={styles.formChild}
             type="text"
             name="name"
             placeholder="Hold Name"
@@ -62,7 +71,7 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
         </div>
         <div>
           <select
-            className={styles.formInput}
+            className={styles.formChild}
             name="size"
             value={filters.size}
             onChange={handleChanges}
@@ -75,7 +84,7 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
         </div>
         <div>
           <select
-            className={styles.formInput}
+            className={styles.formChild}
             name="type"
             value={filters.type}
             onChange={handleChanges}
@@ -89,7 +98,7 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
         </div>
         <div>
           <select
-            className={styles.formInput}
+            className={styles.formChild}
             name="color"
             value={filters.color}
             onChange={handleChanges}
@@ -100,6 +109,11 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
                 <option value={color}>{color}</option>
               ))}
           </select>
+        </div>
+        <div>
+          <button onClick={clearFilters} className={styles.formChild}>
+            Clear Filters
+          </button>
         </div>
       </form>
     </div>
