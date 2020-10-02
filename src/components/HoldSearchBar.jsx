@@ -11,6 +11,14 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     color: "",
   });
 
+  // Generate type and color arrays for drop down options
+  const holdTypeOptions = holdData.map((hold) => {
+    return hold.type;
+  });
+  const holdColorOptions = holdData.map((hold) => {
+    return hold.color;
+  });
+
   // Reload page based on search filters
   useEffect(() => {
     // load in holdData the first time
@@ -49,26 +57,26 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           value={filters.name}
         />
         <p>Filter by Size:</p>
-        <input
-          type="text"
-          name="size"
-          onChange={handleChanges}
-          value={filters.size}
-        />
+        <select name="size" value={filters.size} onChange={handleChanges}>
+          <option value="">Choose a size</option>
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </select>
         <p>Filter by Type:</p>
-        <input
-          type="text"
-          name="type"
-          onChange={handleChanges}
-          value={filters.type}
-        />
+        <select name="type" value={filters.type} onChange={handleChanges}>
+          <option value="">Choose a type</option>
+          {holdTypeOptions &&
+            holdTypeOptions.map((type) => <option value={type}>{type}</option>)}
+        </select>
         <p>Filter by Color:</p>
-        <input
-          type="text"
-          name="color"
-          onChange={handleChanges}
-          value={filters.color}
-        />
+        <select name="color" value={filters.color} onChange={handleChanges}>
+          <option value="">Choose a color</option>
+          {holdColorOptions &&
+            holdColorOptions.map((color) => (
+              <option value={color}>{color}</option>
+            ))}
+        </select>
       </form>
     </div>
   );
