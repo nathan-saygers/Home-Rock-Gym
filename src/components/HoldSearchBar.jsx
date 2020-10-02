@@ -18,8 +18,12 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
       setFilteredHolds(holdData);
     }
     const filteredHolds = holdData.filter((hold) => {
-      let subString = filters.name;
-      return hold.name.includes(subString);
+      return (
+        hold.name.includes(filters.name) &&
+        hold.size.includes(filters.size) &&
+        hold.type.includes(filters.type) &&
+        hold.color.includes(filters.color)
+      );
     });
     setFilteredHolds(filteredHolds);
     setIsFirstLoad(false);
