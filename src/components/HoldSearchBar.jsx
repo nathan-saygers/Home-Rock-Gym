@@ -61,7 +61,12 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           />
         </div>
         <div>
-          <select name="size" value={filters.size} onChange={handleChanges}>
+          <select
+            className={styles.formInput}
+            name="size"
+            value={filters.size}
+            onChange={handleChanges}
+          >
             <option value="">filter by size</option>
             <option value="small">small</option>
             <option value="medium">medium</option>
@@ -69,7 +74,12 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           </select>
         </div>
         <div>
-          <select name="type" value={filters.type} onChange={handleChanges}>
+          <select
+            className={styles.formInput}
+            name="type"
+            value={filters.type}
+            onChange={handleChanges}
+          >
             <option value="">filter by type</option>
             {holdTypeOptions &&
               holdTypeOptions.map((type) => (
@@ -78,7 +88,12 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           </select>
         </div>
         <div>
-          <select name="color" value={filters.color} onChange={handleChanges}>
+          <select
+            className={styles.formInput}
+            name="color"
+            value={filters.color}
+            onChange={handleChanges}
+          >
             <option value="">filter by color</option>
             {holdColorOptions &&
               holdColorOptions.map((color) => (
