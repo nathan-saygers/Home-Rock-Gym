@@ -16,7 +16,6 @@ const HoldLibrary = ({ holds }) => {
         filteredHolds={filteredHolds}
         holdData={holds}
       />
-      <p>Hold Library</p>
       <div className={styles.holdContainer}>
         <div className={styles.holdTableHeader}>
           <p>Name</p>
