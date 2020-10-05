@@ -1,5 +1,6 @@
 // Dependencies
 import React, { useState } from "react";
+import AddHoldModal from "./AddHoldModal";
 import styles from "./WallGridItem.module.scss";
 
 const WallGridItem = ({ coord }) => {
@@ -12,7 +13,8 @@ const WallGridItem = ({ coord }) => {
       className={styles.gridItem}
       onClick={() => setDisplayAddHoldModal(!displayAddHoldModal)}
     >
-      {coord.name}
+      <p>{coord.name}</p>
+      {displayAddHoldModal && <AddHoldModal />}
     </div>
   );
 };
