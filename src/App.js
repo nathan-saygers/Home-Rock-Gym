@@ -12,7 +12,7 @@ import HoldLibrary from "./components/HoldLibrary/HoldLibrary";
 import holdDummyData from "./dummyData/holds";
 
 function App() {
-  const [wallDimensions, setWallDimensions] = useState([11, 18]);
+  const [wallDimensions, setWallDimensions] = useState([8, 8]);
   const [wallDisplayName, setWallDisplayName] = useState("Wall Name");
   const [holds, setHolds] = useState(holdDummyData);
 
