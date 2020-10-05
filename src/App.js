@@ -4,9 +4,9 @@ import "./App.css";
 
 // Components
 import Login from "./components/Login";
-import WallGrid from "./components/WallGrid";
-import WallGridInput from "./components/WallGridInput";
-import HoldLibrary from "./components/HoldLibrary";
+import WallGrid from "./components/WallGrid/WallGrid";
+import WallGridInput from "./components/WallGrid/WallGridInput";
+import HoldLibrary from "./components/HoldLibrary/HoldLibrary";
 
 // Dummy data
 import holdDummyData from "./dummyData/holds";
