@@ -24,7 +24,9 @@ const HoldLibrary = ({ holds }) => {
           <p>Color</p>
         </div>
         {filteredHolds &&
-          filteredHolds.map((hold) => <HoldLibraryItem holdDetails={hold} />)}
+          filteredHolds.map((hold, index) => (
+            <HoldLibraryItem holdDetails={hold} key={index} />
+          ))}
       </div>
     </div>
   );

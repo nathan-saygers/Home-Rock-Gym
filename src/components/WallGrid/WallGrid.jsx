@@ -34,8 +34,8 @@ const WallGrid = ({ wallDimensions, wallDisplayName }) => {
     <div className={styles.wallContainer}>
       <p className={styles.wallName}>{wallDisplayName}</p>
       <div style={calculateWallDimensions()} className={styles.wall}>
-        {generateCoords().map((coord) => (
-          <WallGridItem coord={coord} />
+        {generateCoords().map((coord, index) => (
+          <WallGridItem coord={coord} key={index} />
         ))}
       </div>
     </div>

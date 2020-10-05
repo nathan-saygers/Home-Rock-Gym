@@ -91,8 +91,10 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           >
             <option value="">filter by type</option>
             {holdTypeOptions &&
-              holdTypeOptions.map((type) => (
-                <option value={type}>{type}</option>
+              holdTypeOptions.map((type, index) => (
+                <option value={type} key={index}>
+                  {type}
+                </option>
               ))}
           </select>
         </div>
@@ -105,8 +107,10 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
           >
             <option value="">filter by color</option>
             {holdColorOptions &&
-              holdColorOptions.map((color) => (
-                <option value={color}>{color}</option>
+              holdColorOptions.map((color, index) => (
+                <option value={color} key={index}>
+                  {color}
+                </option>
               ))}
           </select>
         </div>
