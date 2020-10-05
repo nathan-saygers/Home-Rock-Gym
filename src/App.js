@@ -6,7 +6,7 @@ import "./App.css";
 import Login from "./components/Login";
 import WallGrid from "./components/WallGrid";
 import WallGridInput from "./components/WallGridInput";
-import HoldLibrary from "./components/HoldLibrary";
+import HoldLibrary from "./components/HoldLibrary/HoldLibrary";
 
 // Dummy data
 import holdDummyData from "./dummyData/holds";
