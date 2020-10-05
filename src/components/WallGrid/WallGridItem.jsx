@@ -5,7 +5,7 @@ import styles from "./WallGridItem.module.scss";
 const WallGridItem = ({ coord }) => {
   const [displayAddHoldModal, setDisplayAddHoldModal] = useState(false);
 
-  console.log("Modal visible?", displayAddHoldModal);
+  console.log("Modal visible?", coord, displayAddHoldModal);
 
   return (
     <div
