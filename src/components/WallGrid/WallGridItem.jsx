@@ -13,7 +13,7 @@ const WallGridItem = ({ coord }) => {
       className={styles.gridItem}
       onClick={() => setDisplayAddHoldModal(!displayAddHoldModal)}
     >
-      <p>{coord.name}</p>
+      <p>{coord.xyAxes}</p>
       {displayAddHoldModal && <AddHoldModal />}
     </div>
   );

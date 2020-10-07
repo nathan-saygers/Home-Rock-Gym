@@ -11,13 +11,11 @@ const WallGrid = ({ wallDimensions, wallDisplayName }) => {
 
   const generateCoords = () => {
     let coordArr = [];
-
     for (let i = 0; i < wallX * wallY; i++) {
       const y = parseInt(i / wallX) + 1;
       const xInt = (i % wallX) + 1;
       const x = String.fromCharCode(64 + xInt);
-
-      coordArr.push({ name: `${x}${y}` });
+      coordArr.push({ xyAxes: `${x}${y}` });
     }
 
     return coordArr;
@@ -26,7 +24,6 @@ const WallGrid = ({ wallDimensions, wallDisplayName }) => {
   const calculateWallDimensions = () => {
     const width = wallX * 100 + (wallX - 1) * 16 + 48;
     const height = wallY * 100 + (wallY - 1) * 16 + 48;
-
     return { width: `${width}px`, height: `${height}px` };
   };
 
