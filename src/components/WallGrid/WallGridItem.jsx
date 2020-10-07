@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import AddHoldModal from "./AddHoldModal";
 import styles from "./WallGridItem.module.scss";
+import { UpCircleOutlined } from "@ant-design/icons";
 
 const WallGridItem = ({ holds, coord }) => {
   const [displayAddHoldModal, setDisplayAddHoldModal] = useState(false);
-  const [selectedHold, setSelectedHold] = useState();
+  const [selectedHold, setSelectedHold] = useState(false);
 
   console.log(coord, "::", selectedHold);
 
@@ -14,7 +15,7 @@ const WallGridItem = ({ holds, coord }) => {
       className={styles.gridItem}
       onClick={() => setDisplayAddHoldModal(true)}
     >
-      <p>{coord.xyAxes}</p>
+      {selectedHold ? <UpCircleOutlined /> : <p>{coord.xyAxes}</p>}
       {displayAddHoldModal && (
         <AddHoldModal
           holds={holds}
