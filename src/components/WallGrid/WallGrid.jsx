@@ -5,7 +5,7 @@ import styles from "./WallGrid.module.scss";
 // components
 import WallGridItem from "./WallGridItem";
 
-const WallGrid = ({ wallDimensions, wallDisplayName }) => {
+const WallGrid = ({ holds, wallDimensions, wallDisplayName }) => {
   const wallX = wallDimensions[0];
   const wallY = wallDimensions[1];
 
@@ -32,7 +32,7 @@ const WallGrid = ({ wallDimensions, wallDisplayName }) => {
       <p className={styles.wallName}>{wallDisplayName}</p>
       <div style={calculateWallDimensions()} className={styles.wall}>
         {generateCoords().map((coord, index) => (
-          <WallGridItem coord={coord} key={index} />
+          <WallGridItem holds={holds} coord={coord} key={index} />
         ))}
       </div>
     </div>

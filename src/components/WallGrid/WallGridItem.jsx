@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import AddHoldModal from "./AddHoldModal";
 import styles from "./WallGridItem.module.scss";
 
-const WallGridItem = ({ coord }) => {
+const WallGridItem = ({ holds, coord }) => {
   const [displayAddHoldModal, setDisplayAddHoldModal] = useState(false);
-
-  console.log("Modal visible?", coord, displayAddHoldModal);
 
   return (
     <div
@@ -14,7 +12,7 @@ const WallGridItem = ({ coord }) => {
       onClick={() => setDisplayAddHoldModal(!displayAddHoldModal)}
     >
       <p>{coord.xyAxes}</p>
-      {displayAddHoldModal && <AddHoldModal />}
+      {displayAddHoldModal && <AddHoldModal holds={holds} />}
     </div>
   );
 };

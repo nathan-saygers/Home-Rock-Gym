@@ -25,6 +25,7 @@ function App() {
           setWallDisplayName={setWallDisplayName}
         />
         <WallGrid
+          holds={holds}
           wallDimensions={wallDimensions}
           wallDisplayName={wallDisplayName}
         />
