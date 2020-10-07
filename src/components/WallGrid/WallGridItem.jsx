@@ -1,9 +1,31 @@
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
+import AddHoldModal from "./AddHoldModal";
 import styles from "./WallGridItem.module.scss";
+import { UpCircleOutlined } from "@ant-design/icons";
 
-const WallGridItem = ({ coord }) => {
-  return <div className={styles.gridItem}>{coord.name}</div>;
+const WallGridItem = ({ holds, coord }) => {
+  const [displayAddHoldModal, setDisplayAddHoldModal] = useState(false);
+  const [selectedHold, setSelectedHold] = useState(false);
+
+  console.log(coord, "::", selectedHold);
+
+  return (
+    <div
+      className={styles.gridItem}
+      onClick={() => setDisplayAddHoldModal(true)}
+    >
+      {selectedHold ? <UpCircleOutlined /> : <p>{coord.xyAxes}</p>}
+      {displayAddHoldModal && (
+        <AddHoldModal
+          holds={holds}
+          setDisplayAddHoldModal={setDisplayAddHoldModal}
+          selectedHold={selectedHold}
+          setSelectedHold={setSelectedHold}
+        />
+      )}
+    </div>
+  );
 };
 
 export default WallGridItem;
