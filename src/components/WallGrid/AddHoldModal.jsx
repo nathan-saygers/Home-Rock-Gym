@@ -11,6 +11,9 @@ const AddHoldModal = ({
   const [holdOptions, setHoldOptions] = useState("");
 
   const handleChanges = (event) => {
+    // loops through holds to find a hold that matches
+    // the name selected in the modal dropdown.  Saves
+    // the hold in wallGridItem state
     for (const hold of holds) {
       if (hold.name === event.target.value) {
         setSelectedHold(hold);
