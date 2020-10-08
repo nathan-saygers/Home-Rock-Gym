@@ -13,14 +13,6 @@ const WallGridInput = ({ setWallDimensions, setWallDisplayName }) => {
     } else {
       setDimensions({ ...dimensions, [event.target.name]: event.target.value });
     }
-
-    console.log(
-      "from handleChanges",
-      "Dimensions: ",
-      dimensions,
-      "Wall Name: ",
-      wallName
-    );
   };
 
   // On Submit Handler
