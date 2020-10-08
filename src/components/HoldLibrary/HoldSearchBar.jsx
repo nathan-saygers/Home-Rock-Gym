@@ -25,6 +25,11 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     if (isFirstLoad === true) {
       setFilteredHolds(holdData);
     }
+
+    // Generates an array of holds that matches ALL of
+    // the filter criteria.  Must contain any string
+    // of characters entered in name, size, type, and
+    // color
     const filteredHolds = holdData.filter((hold) => {
       return (
         hold.name.includes(filters.name) &&
@@ -37,11 +42,9 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
     setIsFirstLoad(false);
   }, [filters]);
 
-  // Logic for filtering
   const handleChanges = (event) => {
-    console.log("event stuff", event.target.name, event.target.value);
+    // Updates the filters as they are changed by inputs
     setFilters({ ...filters, [event.target.name]: event.target.value });
-    console.log("das filter", filters);
   };
 
   // Logic for clearing filters
@@ -54,6 +57,10 @@ const HoldSearchBar = ({ holdData, setFilteredHolds }) => {
       color: "",
     });
   };
+
+  // Dropdown options for hold type and hold color are
+  // generated dynamically by mapping over the holdData
+  // array.  See lines 14-20 (as of Oct 2020)
 
   return (
     <div className={styles.searchBarContainer}>
