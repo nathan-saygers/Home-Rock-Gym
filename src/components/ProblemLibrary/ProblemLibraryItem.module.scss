@@ -1,0 +1,13 @@
+.ProblemLibraryItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: black 2px solid;
+
+  p {
+    padding: 15px;
+    width: 20%;
+    margin: 1% 50px;
+    text-align: center;
+  }
+}

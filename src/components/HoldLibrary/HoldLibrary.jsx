@@ -11,11 +11,7 @@ const HoldLibrary = ({ holds }) => {
   console.log("filteredHolds", filteredHolds);
   return (
     <div className={styles.holdLibraryContainer}>
-      <HoldSearchBar
-        setFilteredHolds={setFilteredHolds}
-        filteredHolds={filteredHolds}
-        holdData={holds}
-      />
+      <HoldSearchBar setFilteredHolds={setFilteredHolds} holdData={holds} />
       <div className={styles.holdContainer}>
         <div className={styles.holdTableHeader}>
           <p>Name</p>
