@@ -8,8 +8,6 @@ const WallGridItem = ({ holds, coord }) => {
   const [displayAddHoldModal, setDisplayAddHoldModal] = useState(false);
   const [selectedHold, setSelectedHold] = useState(false);
 
-  console.log(coord, "::", selectedHold);
-
   return (
     <div
       className={styles.gridItem}
