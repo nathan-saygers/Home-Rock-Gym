@@ -5,10 +5,10 @@ import styles from "./ProblemLibraryItem.module.scss";
 const ProblemLibraryItem = ({ problemDetails }) => {
   return (
     <div className={styles.ProblemLibraryItemContainer}>
-      <p>{problemDetails.problem_name}</p>
+      <p>{problemDetails.problemName}</p>
       <p>{problemDetails.setter}</p>
       <p>{problemDetails.grade}</p>
-      <p>{problemDetails.created_at}</p>
+      <p>{problemDetails.createdAt}</p>
     </div>
   );
 };
