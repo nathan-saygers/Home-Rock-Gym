@@ -2,13 +2,13 @@
 import React from "react";
 import styles from "./ProblemLibraryItem.module.scss";
 
-const ProblemLibraryItem = ({ holdDetails }) => {
+const ProblemLibraryItem = ({ problemDetails }) => {
   return (
     <div className={styles.ProblemLibraryItemContainer}>
-      <p>{holdDetails.name}</p>
-      <p>{holdDetails.size}</p>
-      <p>{holdDetails.type}</p>
-      <p>{holdDetails.color}</p>
+      <p>{problemDetails.problem_name}</p>
+      <p>{problemDetails.setter}</p>
+      <p>{problemDetails.grade}</p>
+      <p>{problemDetails.created_at}</p>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import ProblemLibraryItem from "./ProblemLibraryItem";
 
 const ProblemLibrary = ({ problems, setProblemData }) => {
   const [filteredProblems, setFilteredProblems] = useState();
+  console.log("problems in ProblemLibary", problems);
 
   return (
     <div className={styles.problemLibraryContainer}>
@@ -19,15 +20,12 @@ const ProblemLibrary = ({ problems, setProblemData }) => {
       <div className={styles.problemContainer}>
         <div className={styles.problemTableHeader}>
           <p>Name</p>
-          <p>Size</p>
-          <p>Type</p>
-          <p>Color</p>
-          <p>another</p>
-          <p>thing</p>
-          <p>problemTableHeader</p>
+          <p>Setter</p>
+          <p>Grade</p>
+          <p>Created at</p>
         </div>
-        {filteredProblems &&
-          filteredProblems.map((problem, index) => (
+        {problems &&
+          problems.map((problem, index) => (
             <ProblemLibraryItem problemDetails={problem} key={index} />
           ))}
       </div>
