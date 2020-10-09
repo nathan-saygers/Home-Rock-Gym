@@ -2,7 +2,7 @@ const problems = [
   {
     id: 1,
     problemName: "the Reaper",
-    setter: 2,
+    setterId: 2,
     grade: "vHard",
     angle: 45,
     photo: "www.thisisaphotolink.com",
@@ -12,7 +12,7 @@ const problems = [
   {
     id: 2,
     problemName: "triangle face",
-    setter: 3,
+    setterId: 3,
     grade: "V7",
     angle: 25,
     photo: "www.thisisaphotolink.com",
@@ -22,7 +22,7 @@ const problems = [
   {
     id: 3,
     problemName: "Gut Crunch",
-    setter: 1,
+    setterId: 1,
     grade: "V5",
     angle: 15,
     photo: "www.thisisaphotolink.com",
@@ -32,7 +32,7 @@ const problems = [
   {
     id: 4,
     problemName: "lil crimpers",
-    setter: 3,
+    setterId: 3,
     grade: "VB",
     angle: 90,
     photo: "www.thisisaphotolink.com",
