@@ -11,10 +11,11 @@ const ProblemSearchBar = ({ problemData, setFilteredProblems }) => {
     createdAt: "",
   });
 
-  // Generate setterId dropdown options
-  const problemSetterIdOptions = problemData.map((problem) => {
-    return problem.setterId;
-  });
+  // Generate setterId dropdown options.
+  const unsortedSetterIdOptions = [
+    ...new Set(problemData.map((problem) => problem.setterId)),
+  ];
+  const setterIdOptions = unsortedSetterIdOptions.sort();
 
   // Reload page based on search filters
   useEffect(() => {
@@ -33,13 +34,6 @@ const ProblemSearchBar = ({ problemData, setFilteredProblems }) => {
         problem.grade.includes(filters.grade)
       );
     });
-    console.log(
-      "is it a filtering issue?",
-      "filtered array",
-      filteredProblems,
-      "filters",
-      filters
-    );
     setFilteredProblems(filteredProblems);
     setIsFirstLoad(false);
   }, [filters]);
@@ -107,8 +101,8 @@ const ProblemSearchBar = ({ problemData, setFilteredProblems }) => {
             onChange={handleChanges}
           >
             <option value="">filter by setterId</option>
-            {problemSetterIdOptions &&
-              problemSetterIdOptions.map((setterId, index) => (
+            {setterIdOptions &&
+              setterIdOptions.map((setterId, index) => (
                 <option value={setterId} key={index}>
                   {setterId}
                 </option>
